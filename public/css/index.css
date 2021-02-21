@@ -1,0 +1,24 @@
+.rainbow {
+  animation: rainbow 10s ease-in infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    color: #ff3939;
+  }
+  20% {
+    color: #fd9d43;
+  }
+  40% {
+    color: #ffe448;
+  }
+  60% {
+    color: #6dff59;
+  }
+  80% {
+    color: #5964ff;
+  }
+  100% {
+    color: #ff3939;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "functional-programming-workshop",
+  "version": "1.0.0",
+  "description": "> ✨ Bootstrapped with Create Snowpack App (CSA).",
+  "main": "snowpack.config.js",
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "prettier --check \"src/**/*.js\""
+  },
+  "dependencies": {
+    "highlight.js": "^10.6.0",
+    "reveal.js": "^4.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "snowpack": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoffeJeanCode/functional-programming-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoffeJeanCode/functional-programming-workshop/issues"
+  },
+  "homepage": "https://github.com/CoffeJeanCode/functional-programming-workshop#readme"
+}
