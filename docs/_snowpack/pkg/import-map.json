@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "reveal.js": "./revealjs.js",
+    "reveal.js/plugin/highlight/highlight.esm": "./revealjs/plugin/highlight/highlight.esm.js"
+  }
+}
