@@ -1,24 +1,34 @@
-.rainbow {
-  animation: rainbow 10s ease-in infinite;
+:root {
+  --main-gradient: -webkit-linear-gradient(60deg, #ff64ea, #3c74ec);
 }
 
-@keyframes rainbow {
-  0% {
-    color: #ff3939;
-  }
-  20% {
-    color: #fd9d43;
-  }
-  40% {
-    color: #ffe448;
-  }
-  60% {
-    color: #6dff59;
-  }
-  80% {
-    color: #5964ff;
-  }
-  100% {
-    color: #ff3939;
-  }
+::selection {
+  background: rgba(60, 116, 236, 0.5) !important;
+  color: var(--main-color);
+}
+
+.rainbow {
+  background: var(--main-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.js {
+  background: -webkit-linear-gradient(yellow, orange);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.appear {
+  background: var(--main-gradient);
+  color: transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.appear:hover {
+  color: var(--main-color);
+  background: transparent;
 }

@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Introducción a la Programación Funcional 🔮 en JS</title>
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/reveal.css" />
-    <link rel="stylesheet" href="./css/night.css" />
+    <link rel="stylesheet" href="./css/black.css" />
+    <link rel="stylesheet" href="./css/monokai.css" />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
@@ -15,10 +17,136 @@
         <section>
           <h2>
             Introducción a la
-            <span class="rainbow">Programación Funcional</span> en JS
+            <span class="rainbow">Programación Funcional </span>🔮 en
+            <span class="js">JS</span>
           </h2>
         </section>
-        <section></section>
+        <section>
+          <h2>Contenido</h2>
+          <ul>
+            <li>Qué es?</li>
+            <li>Inmutablidad y Side Effects</li>
+            <li>Funciones Puras</li>
+            <li>Metodos de listas</li>
+            <li>
+              <a
+                href="https://observablehq.com/@coffejeancode/ejercicios-programacion-funcional"
+                >Ejercicios</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Qué es?</h2>
+            <span class="appear"> ¡Es un paradigma! </span>
+          </section>
+          <section>
+            <img src="./img/paradigms.png" alt="paradigms" />
+          </section>
+          <section>
+            <img
+              src="./img/imperative-and-declarative.png"
+              alt="imperative-and-declarative"
+            />
+          </section>
+          <section>
+            <h2>¿Por qué?</h2>
+            <ul>
+              <li>Es predicible</li>
+              <li>Facil de probar</li>
+              <li>Facil de programar (en JS)</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Inmutablidad y Side Effects</h2>
+          </section>
+          <section>
+            <h3>Side Effects</h3>
+            <pre><code data-trim>
+              let globalState = 0
+              function changeState () {
+                globalState += 1
+              }
+              changeState()
+              console.log(globalState) // 1
+            </code></pre>
+          </section>
+          <section>
+            <h3>Inmutablidad</h3>
+            <pre><code data-trim>
+                const count = 0;
+                function increment (num) {
+                  return num + 1
+                }
+                const newCount = increment(count)
+                console.log(newCount) // 1
+              </code></pre>
+          </section>
+        </section>
+        <section>
+          <h2>Funciones Puras</h2>
+          <img src="./img/pure-functions.png" alt="pure functions" />
+        </section>
+        <section>
+            <section>
+              <h2>Metodos de Listas</h2>
+              <img src="./img/funcional-array.png" alt="Funcional Sandwich" />
+            </section>
+            <section>
+              <h3>Map</h3>
+              <pre><code data-trim>
+                function transform (arr, fn) {
+                  let list = new Array(arr.length);
+                  
+                  for(let i = 0; i < arr.length; i++) {
+                    list[i] = fn(arr[i], i, arr)
+                  }
+
+                  return list
+                }
+                let powToTwo = transform([1,2,3,4,5,6], (el) => el * 2) 
+                // 2, 4, 6, 8, 10, 12
+              </code></pre>
+            </section>
+            <section>
+              <h3>Filter</h3>
+              <pre><code data-trim>
+                function exclusion (arr, fn) {
+                  let list = new Array(arr.length);
+                  
+                  for(let i = 0; i < arr.length; i++) {
+                    if (fn(arr[i], i, arr)) {
+                      list.push(arr[i]) 
+                    }
+                  }
+  
+                  return list
+                }
+                let greaterThan2 = exclusion([1,2,3,4,5,6], (el) => el < 2) 
+                // 3, 4, 5, 6
+              </code></pre>
+            </section>
+            <section>
+              <h3>Reduce</h3>
+              <pre><code data-trim>
+                function composition (arr, fn, init) {
+                  let total = init;
+                  
+                  for(let i = 0; i < arr.length; i++) {
+                    total = fn(total, arr[i], i, arr)
+                  }
+  
+                  return total
+                }
+                let sum = composition([1,2,3,4,5,6], (acc, el) => el + acc, 0) 
+                // 21
+              </code></pre>
+            </section>
+          </section>
+        </section>
       </div>
     </main>
     <script type="module" src="/dist/index.js"></script>
