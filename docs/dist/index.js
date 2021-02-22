@@ -1,5 +1,5 @@
-import Reveal from '../_snowpack/pkg/revealjs.js';
-import Hightlight from '../_snowpack/pkg/revealjs/plugin/highlight/highlight.esm.js';
+import Reveal from './reveal.js';
+import Hightlight from './highlight.esm.js';
 
 Reveal.initialize({
   plugins: [Hightlight],
